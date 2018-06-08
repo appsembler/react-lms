@@ -1,4 +1,3 @@
-
 Open EdX React LMS app
 ===========
 
