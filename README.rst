@@ -1,3 +1,4 @@
+
 Open EdX React LMS app
 ===========
 
@@ -30,8 +31,7 @@ Installation
 ------------
 It is assumed you have an instance of Open edX Gingko running in either a devstack or production style environment.
 
-Installation steps
-~~~~~
+### Installation steps
 
 1. Clone this repo into ``path_to_your_devstack/src/``
 
@@ -42,29 +42,28 @@ Installation steps
 4. Install the package using: ``pip install -e /edx/src/react-lms/``
 
 5. Add the following to the ``lms.env.json`` file in your devstack::
-  ```sh
-  "ADDL_INSTALLED_APPS": [
-    "react_lms"
-  ]
-  ```
+	  ```sh
+	  "ADDL_INSTALLED_APPS": [
+	    "react_lms"
+	  ]
+	  ```
 
-6. Add the following to the LMS URL schema in ``edx-platform/lms/urls.py``::
-  ```sh
-  urlpatterns += (
-          url(r'^react-lms/',
-              include('react_lms.urls', namespace='react-lms')),
-  )
-  ```
+6. Add the following to the LMS URL schema in ``edx-platform/lms/urls.py``:
+	  ```sh
+	  urlpatterns += (
+	          url(r'^react-lms/',
+	              include('react_lms.urls', namespace='react-lms')),
+	  )
+	  ```
 
-7. Add the following into your env config file (or the common one) under ``edx-platform/lms/envs/``::
-  ```sh
-  from react_lms.settings import REACT_LMS
-  ```
+7. Add the following into your env config file (or the common one) under ``edx-platform/lms/envs/``:
+	  ```sh
+	  from react_lms.settings import REACT_LMS
+	  ```
 8. There is no eigth step :D You should be good.
 
 
-Running the app
-~~~~~
+## Running the app
 
 1. Run the LMS in your devstack (using ``paver``). We like to use the ``--fast`` option with ``paver``, so we don't spend our best years of life waiting for it.
 
@@ -110,14 +109,13 @@ frontend
 
 When developing the app, we add the code into ``lms-base``.
 
-Theming
-~~~~~
+### Theming
 What can be seen from the structure above is that the ``theme`` folder reflects the structure of the ``lms-base`` folder. The reason for this is to enable "theming" for the frontend we're building. Essentially, it works in a very similar fashion to `Comprehensive Theming<http://edx.readthedocs.io/projects/edx-installing-configuring-and-running/en/latest/ecommerce/theming.html/>`_ that is already used to theme Open edX sites. If you want to override a component, view, static asset or a sass file that's included somewhere in your React code, you mirror the path to it and the component in the ``theme`` folder and change the new file in a way you prefer.
 For example, you want to override the following image included in a .jsx file: ``static/images/defaults/default-hero-bg.jpg``. The full location of that asset is ``frontend/src/lms-base/static/images/defaults/``. So, in order to use your new image asset that you want to use, you can name your new image the same as the original, then place it under ``frontend/src/theme/static/images/defaults/``. The way the webpack config is set up, when resolving imports it will first look for the included asset in the ``theme`` folder, then (if not found) fall back to the default ``lms-base`` folder to load the asset.
 This leads us to the convention for importing assets/components into your components and views..
 
-Importing SASS files, components and static assets into components/views
-~~~~~
+### Importing SASS files, components and static assets into components/views
+
 The webpack setup allows for easy and very intuitive imports when you write your code. The convention here is that you don't include any assets using a relative path to the component, with exception of assets that are specific for that component and ship with it. A little more about that case in the convention for writing/packaging components.
 So for example, if you want to import an image from static assets, you use the following:
 ```
@@ -127,14 +125,14 @@ Note that you need to only use the path inside the ``lms-base`` folder.
 
 Regarding SASS, we're using sass/css modules. That makes the classes prefixed in components, helping avoid overriding other components styles. We also have a central "sass library" - read more about it below.
 
-Components and views conventions
-~~~~~
+### Components and views conventions
+
 Essentially, if a component is a wrapper for displaying a page in the LMS - it is a view and goes under ``views``. Otherwise it goes under ``components``. Components and views are also organised in sub-folders, essentially grouped by pure logic (components specific for the dashboard view are in the dashboard folder etc.)
 Each component or view goes under its own folder named the same as the component/view, and that folder contains the components .jsx, .sass (specific styles for the component), component-specific static assets (such as svg).
 This approach allows for modularity and more sanity when contributing new components.
 
-Writing component SASS and using common styles and variables
-~~~~~
+### Writing component SASS and using common styles and variables
+
 The ``sass-core`` folder contains the common SASS styles that apply to the root element of the React app, but also different functions, variables, mixins, and base grid that can be used in component-specific SASS files.
 When creating a new component, create a new SASS file named ``ComponentName.scss`` in the components folder, then at the beginning include the common styles:
 ``@import '~sass-core/sass-core';``
@@ -144,3 +142,11 @@ Notice we're using the alias here, meaning there's no need for relative paths wh
 Other
 --------
 *TODO: document Redux, API calls, routing etc.*
+
+Screenshots
+--------
+![Index page](https://media.giphy.com/media/3ztVvKIH5jHOxRbBsA/giphy.gif)
+![Card effects](https://media.giphy.com/media/5n5BNMVBjunVBfDBeT/giphy.gif)
+![Course About](https://media.giphy.com/media/FeUGlFLmvBVWu3f58M/giphy.gif)
+![Dashboard](https://media.giphy.com/media/kwSlSy9rtUFKXntpTd/giphy.gif)
+![Course content](https://media.giphy.com/media/1WbJwfz4Scp6nXOwXJ/giphy.gif)
