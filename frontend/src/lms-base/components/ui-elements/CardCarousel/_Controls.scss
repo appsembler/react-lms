@@ -1,0 +1,60 @@
+@import '~sass-core/sass-core';
+
+.controls-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.control-button {
+  width: calcRem(32);
+  height: calcRem(32);
+  border: none;
+  background: none;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+
+  img {
+    width: 100%;
+  }
+
+  &:disabled {
+    opacity: 0.2;
+  }
+
+  &:hover {
+
+    img {
+      fill: $primary-color;
+    }
+  }
+}
+
+.ticks-container {
+  margin: calcRem(15);
+  padding: 0;
+  display: flex;
+  align-items: center;
+
+  .tick {
+    transition: 1s all cubic-bezier(0.165, 0.84, 0.44, 1);
+    list-style-type: none;
+    width: calcRem(12);
+    height: calcRem(12);
+    border-radius: calcRem(24);
+    border: calcRem(2) solid $primary-color;
+    background: none;
+    margin: calcRem(5);
+
+    &:hover {
+      background-color: $primary-color;
+    }
+
+    &.tick-active {
+      background-color: $primary-color;
+      width: calcRem(24);
+    }
+  }
+}

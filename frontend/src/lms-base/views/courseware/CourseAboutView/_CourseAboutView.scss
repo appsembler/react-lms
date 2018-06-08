@@ -1,0 +1,229 @@
+@import '~sass-core/sass-core';
+
+.course-about-container {
+
+}
+
+.course-about-header-container {
+  background-size: cover;
+  background-position: center;
+}
+
+.course-about-header {
+  margin: 0 calcRem(-60);
+  display: flex;
+  padding: 0;
+
+  .header-content-wrapper {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 100%;
+    background-color: rgba($base-text-color, 0.5);
+  }
+
+  .header-content {
+    flex-shrink: 1;
+    flex-grow: 1;
+    width: 100%;
+    padding: calcRem(80) calcRem(60);
+    max-width: calcRem(760);
+
+    .course-title {
+      @include font-bold;
+      font-size: calcRem(42);
+      line-height: calcRem(62);
+      color: #fff;
+      margin: 0 0 calcRem(20);
+    }
+
+    p {
+      @include font-regular;
+      font-size: calcRem(16);
+      line-height: calcRem(24);
+      margin: 0;
+      color: #fff;
+    }
+
+    .video-cta-wrapper {
+      margin: calcRem(30) 0 0;
+    }
+  }
+
+  .header-button {
+    flex-shrink: 0;
+    flex-grow: 0;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    @include font-bold;
+    font-size: calcRem(16);
+    padding: calcRem(20) calcRem(60) calcRem(20) calcRem(30);
+    background-color: $primary-color;
+    color: pick-visible-color($primary-color, #fff, $base-text-color);
+
+    span {
+      display: block;
+    }
+
+    img {
+      height: calcRem(20);
+      filter: invert(1);
+      margin-left: calcRem(10);
+      display: block;
+      transition: all 0.3s ease-in-out;
+    }
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+      color: pick-visible-color(darken($primary-color, 10%), #fff, $base-text-color);
+      cursor: pointer;
+
+      img {
+        margin-left: calcRem(15);
+      }
+    }
+  }
+}
+
+.visual-section-heading {
+  display: flex;
+  align-items: center;
+  margin: 0 0 calcRem(30);
+  width: 100%;
+
+  img {
+    flex-shrink: 0;
+    flex-grow: 0;
+    width: calcRem(24);
+    height: auto;
+    display: block;
+    margin-right: calcRem(10);
+    opacity: 0.5;
+  }
+
+  h2 {
+    flex-shrink: 1;
+    flex-grow: 1;
+    width: 100%;
+    @include font-bold;
+    margin: 0;
+    font-size: calcRem(18);
+    line-height: calcRem(28);
+    color: $helper-text-color;
+  }
+}
+
+.course-about-content {
+  padding-top: calcRem(60);
+  padding-bottom: calcRem(60);
+  display: flex;
+
+  .course-about {
+    width: 100%;
+    flex-grow: 1;
+    flex-shrink: 1;
+
+    p {
+      line-height: 160%;
+      margin-bottom: calcRem(20);
+      text-align: justify;
+    }
+  }
+
+  .course-meta {
+    width: calcRem(240);
+    max-width: 100%;
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin-left: calcRem(100);
+
+    .course-meta-list {
+      padding: 0;
+      margin: 0;
+    }
+
+    .course-meta-item {
+      list-style-type: none;
+      margin-bottom: calcRem(20);
+      display: flex;
+      align-items: baseline;
+
+      .label {
+        flex: 0 0 calcRem(80);
+        font-size: calcRem(12);
+        color: $helper-text-color;
+        display: block;
+        margin-right: calcRem(10);
+      }
+
+      .value {
+        flex-grow: 1;
+        flex-shrink: 1;
+        width: 100%;
+        font-size: calcRem(16);
+      }
+    }
+  }
+}
+
+.course-staff {
+  background-color: $tinted-bg-color;
+  padding: calcRem(60) 0;
+
+  .staff-list-wrapper {
+    padding: 0;
+    margin: 0 calcRem(-20);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .staff-member {
+    display: flex;
+    align-items: center;
+    width: calcRem(320);
+    max-width: 100%;
+    margin: calcRem(20);
+
+    img {
+      flex-grow: 0;
+      flex-shrink: 0;
+      margin-right: calcRem(20);
+      border-radius: 100%;
+      width: calcRem(100);
+      height: auto;
+      display: block;
+    }
+
+    .info {
+      flex-grow: 1;
+      flex-shrink: 1;
+      width: 100%;
+
+      .name {
+        display: block;
+        @include font-regular;
+        color: $base-text-color;
+        font-size: calcRem(16);
+        margin: 0 0 calcRem(5);
+      }
+
+      .description {
+        display: block;
+        @include font-regular;
+        color: $helper-text-color;
+        font-size: calcRem(12);
+        margin: 0 0 calcRem(5);
+      }
+
+      .organisation {
+        display: block;
+        @include font-bold;
+        color: $primary-color;
+        font-size: calcRem(12);
+        margin: 0;
+      }
+    }
+  }
+}

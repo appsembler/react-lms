@@ -1,0 +1,13 @@
+@import '~sass-core/sass-core';
+
+.lms-root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+.lms-content {
+  flex-shrink: 1;
+  flex-grow: 1;
+}

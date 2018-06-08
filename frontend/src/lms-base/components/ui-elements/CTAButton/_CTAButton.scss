@@ -1,0 +1,99 @@
+@import '~sass-core/sass-core';
+
+.cta-button {
+  border-radius: $button-border-radius;
+  @include font-bold;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease-in-out;
+  min-width: calcRem(180);
+
+  &:disabled {
+    opacity: 0.5;
+  }
+
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &.large {
+    font-size: calcRem(18);
+    padding: calcRem(18) calcRem(36);
+
+    .cta-icon {
+      height: calcRem(26);
+      margin-right: calcRem(12);
+    }
+  }
+
+  &.medium {
+    font-size: calcRem(16);
+    padding: calcRem(16) calcRem(32);
+
+    .cta-icon {
+      height: calcRem(22);
+      margin-right: calcRem(10);
+    }
+  }
+
+  &.small {
+    font-size: calcRem(14);
+    padding: calcRem(14) calcRem(28);
+
+    .cta-icon {
+      height: calcRem(18);
+      margin-right: calcRem(8);
+    }
+  }
+
+  &.positive {
+
+    &.primary {
+      background-color: $primary-color;
+      color: pick-visible-color($primary-color, #fff, $base-text-color);
+
+      &:hover {
+        background-color: darken($primary-color, 10%);
+        color: pick-visible-color(darken($primary-color, 10%), #fff, $base-text-color);
+      }
+    }
+
+    &.secondary {
+      background: none;
+      border: calcRem(2) solid $primary-color;
+      color: $primary-color;
+
+      &:hover {
+        border-color: darken($primary-color, 10%);
+        background-color: darken($primary-color, 10%);
+        color: pick-visible-color(darken($primary-color, 10%), #fff, $base-text-color);
+      }
+    }
+  }
+
+  &.negative {
+
+    &.primary {
+      background-color: #fff;
+      color: $base-text-color;
+      opacity: 1;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+
+    &.secondary {
+      background: none;
+      border: calcRem(2) solid #fff;
+      color: #fff;
+      opacity: 1;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+}

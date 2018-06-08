@@ -1,0 +1,42 @@
+@import '~sass-core/sass-core';
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.nav-item {
+  display: block;
+  margin: calcRem(10) calcRem(15);
+  font-size: $base-font-size;
+  text-decoration: none;
+  color: $base-text-color;
+  transition: all 0.3s ease-in-out;
+
+  &:hover, .active {
+    color: $primary-color;
+  }
+}
+
+.nav-cta {
+  background-color: $primary-color;
+  color: pick-visible-color($primary-color, #fff, $base-text-color);
+  border-radius: $button-border-radius;
+  padding: calcRem(10) calcRem(20);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: darken($primary-color, 10%);
+    color: pick-visible-color(darken($primary-color, 10%), #fff, $base-text-color);
+  }
+}
+
+.nav-separator {
+  display: block;
+  width: calcRem(1);
+  height: calcRem(28);
+  background-color: $light-outlines-color;
+  margin: 0 calcRem(15);
+}

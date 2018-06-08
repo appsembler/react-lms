@@ -1,0 +1,73 @@
+@import '~sass-core/sass-core';
+
+.user-container {
+  display: flex;
+  align-items: flex-start;
+}
+
+.user-image {
+  display: block;
+  width: calc(128);
+  height: auto;
+  border-radius: 100%;
+  flex-shrink: 0;
+  flex-grow: 0;
+  margin-right: calcRem(30);
+}
+
+.user-info {
+  width: 100%;
+  flex-shrink: 1;
+  flex-grow: 1;
+
+  .hello-text {
+    display: block;
+    @include font-bold;
+    font-size: calcRem(48);
+    line-height: calcRem(68);
+    margin: calcRem(20) 0;
+  }
+
+  p {
+    @include font-regular;
+    font-size: calcRem(16);
+    line-height: calcRem(28);
+    margin: calcRem(10) 0;
+  }
+
+  .stats {
+    margin: calcRem(20) 0 0;
+    padding: 0;
+
+    li {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      list-style-type: none;
+      margin: calcRem(10) 0;
+
+      .stat-icon {
+        width: calcRem(24);
+        display: block;
+        flex-shrink: 0;
+        flex-grow: 0;
+        margin-right: calcRem(20);
+
+        img {
+          height: calcRem(24);
+          display: block;
+          margin: 0 auto;
+        }
+      }
+
+      .stat-text {
+        @include font-regular;
+        font-size: calcRem(18);
+        line-height: calcRem(28);
+        flex-grow: 1;
+        flex-shrink: 1;
+        width: 100%;
+      }
+    }
+  }
+}

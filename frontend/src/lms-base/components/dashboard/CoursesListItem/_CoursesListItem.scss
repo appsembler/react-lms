@@ -1,0 +1,123 @@
+@import '~sass-core/sass-core';
+
+.course-container {
+  background: #fff;
+  display: flex;
+  width: 100%;
+  margin-top: calcRem(20);
+  margin-bottom: calcRem(20);
+}
+
+.course-image-container {
+  display: block;
+  flex: 0 0 calcRem(260);
+  background-size: cover;
+  background-position: center;
+}
+
+.course-info-container {
+  flex: 1 1 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: calcRem(30);
+
+  .title {
+    margin: 0 0 calcRem(15);
+    @include font-bold;
+    font-size: calcRem(24);
+  }
+
+  .code {
+    display: block;
+    margin: 0 0 calcRem(5);
+    @include font-bold;
+    font-size: calcRem(14);
+    color: $helper-text-color;
+  }
+
+  .course-dates {
+    display: flex;
+
+    .course-date {
+      display: block;
+      font-size: calcRem(14);
+      margin-right: calcRem(15);
+    }
+  }
+
+  .course-info-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calcRem(30);
+
+    .footer-control {
+      background: none;
+      border: none;
+      outline: none;
+      padding: 0;
+      margin-right: calcRem(20);
+      @include font-bold;
+      color: $primary-color;
+      font-size: calcRem(14);
+    }
+  }
+
+  .course-share-container {
+    border-left: calcRem(1) solid $light-outlines-color;
+    padding-left: calcRem(20);
+    display: flex;
+    align-items: center;
+
+    span {
+      color: $helper-text-color;
+      margin-right: calcRem(10);
+      font-size: calcRem(14);
+      display: block;
+    }
+
+    .share-button {
+      border: none;
+      outline: none;
+      background: none;
+      margin-right: calcRem(10);
+      transition: all 0.3s ease-in-out;
+
+      img {
+        height: calcRem(14);
+        width: auto;
+      }
+
+      &:hover {
+        cursor: pointer;
+        opacity: 0.5;
+      }
+    }
+  }
+}
+
+.course-cta-container {
+  flex: 0 0 calcRem(220);
+  display: flex;
+  align-items: center;
+  padding-right: calcRem(30);
+
+  .course-button {
+    border-radius: $button-border-radius;
+    @include font-bold;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease-in-out;
+    min-width: calcRem(180);
+    font-size: calcRem(16);
+    padding: calcRem(16) calcRem(32);
+    background-color: $primary-color;
+    color: pick-visible-color($primary-color, #fff, $base-text-color);
+    text-align: center;
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+      color: pick-visible-color(darken($primary-color, 10%), #fff, $base-text-color);
+    }
+  }
+}

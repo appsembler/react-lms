@@ -1,0 +1,42 @@
+@import '~sass-core/sass-core';
+
+.login-container {
+
+}
+
+.login-main {
+  background-size: contain;
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  padding-top: calcRem(40);
+  padding-bottom: calcRem(160);
+
+  .login-content {
+    width: 100%;
+    max-width: calcRem(420);
+
+    h1 {
+      font-size: calcRem(48);
+      line-height: calcRem(72);
+      color: $primary-color;
+      margin: 0 0 calcRem(30);
+      padding: 0 0 calcRem(30);
+      border-bottom: calcRem(2) solid $base-text-color;
+      @include font-bold;
+      display: inline-block;
+    }
+
+    p {
+      display: block;
+      font-size: calcRem(14);
+      line-height: calcRem(22);
+      @include font-regular;
+      margin: 0 0 calcRem(30);
+
+      a {
+        @include font-bold;
+        color: $primary-color;
+      }
+    }
+  }
+}

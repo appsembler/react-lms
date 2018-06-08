@@ -1,0 +1,52 @@
+@import '~sass-core/sass-core';
+
+.input-container {
+  padding: calcRem(10) 0;
+  display: block;
+}
+
+.label {
+  @include font-regular;
+  font-size: calcRem(12);
+  display: block;
+  color: $base-text-color;
+  margin: 0 0 calcRem(10);
+}
+
+.input {
+  background: none;
+  border: none;
+  outline: none;
+  border-bottom: calcRem(1) solid $dark-outlines-color;
+  font-size: calcRem(16);
+  padding: calcRem(10) 0;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+
+  &:hover, &:focus {
+    border-bottom: calcRem(2) solid $primary-color;
+    padding-bottom: calcRem(9);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+
+    &:hover, &:focus {
+      border-bottom: calcRem(1) solid $dark-outlines-color;
+      padding: calcRem(10) 0;
+    }
+  }
+}
+
+.helper-text {
+  display: block;
+  margin: calcRem(10) 0 0;
+  width: 100%;
+  font-size: calcRem(12);
+  color: $helper-text-color;
+
+  a {
+    color: $primary-color;
+    @include font-bold;
+  }
+}

@@ -1,0 +1,79 @@
+@import '~sass-core/sass-core';
+
+.card {
+  position: absolute;
+  background-size: cover;
+  background-position: center;
+  background-color: red;
+  color: #fff;
+  transition: 1s all cubic-bezier(0.165, 0.84, 0.44, 1), 0.3s opacity cubic-bezier(0.165, 0.84, 0.44, 1);
+  opacity: 0.8;
+  border-radius: calcRem(10);
+  box-shadow: none;
+  overflow: hidden;
+
+  .card-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: calcRem(260);
+    height: calcRem(360);
+    padding: calcRem(20);
+    transition: 1s all cubic-bezier(0.165, 0.84, 0.44, 1);
+    background-color: rgba($base-text-color, 0.6);
+
+    .course-title {
+      @include font-bold;
+      font-size: calcRem(20);
+      line-height: calcRem(28);
+      margin: 0 0 calcRem(10);
+    }
+
+    .course-code {
+      display: block;
+      font-size: calcRem(14);
+      line-height: calcRem(20);
+      margin: 0 0 calcRem(5);
+    }
+
+    .course-start {
+      display: block;
+      font-size: calcRem(14);
+      line-height: calcRem(20);
+      margin: 0 0 calcRem(10);
+    }
+  }
+
+  .course-cta {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: calcRem(15) calcRem(30);
+    background-color: $primary-color;
+    color: pick-visible-color($primary-color, #fff, $base-text-color);
+    transition: all 0.3s ease-in-out;
+    font-size: calcRem(14);
+    text-decoration: none;
+    @include font-bold;
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+      color: pick-visible-color(darken($primary-color, 10%), #fff, $base-text-color);
+    }
+  }
+
+  &.card-past {
+    opacity: 0;
+  }
+
+  &.card-active {
+    opacity: 1;
+    border-radius: calcRem(15);
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+
+    .card-inner {
+      width: calcRem(280);
+      padding: calcRem(30);
+    }
+  }
+}

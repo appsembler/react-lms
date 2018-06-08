@@ -1,0 +1,50 @@
+@import '~sass-core/sass-core';
+
+.input-container {
+  padding: calcRem(10) 0;
+  display: block;
+}
+
+.input-inner {
+  display: flex;
+  align-items: center;
+}
+
+.label {
+  width: 100%;
+  flex-grow: 1;
+  flex-shrink: 1;
+  @include font-regular;
+  font-size: calcRem(16);
+  display: block;
+  color: $base-text-color;
+
+  a {
+    @include font-bold;
+    color: $primary-color;
+  }
+
+  span {
+    font-size: calcRem(12);
+  }
+}
+
+.input {
+  flex-grow: 0;
+  flex-shrink: 0;
+  margin-right: calcRem(10);
+  font-size: calcRem(16);
+}
+
+.helper-text {
+  display: block;
+  margin: calcRem(10) 0 0;
+  width: 100%;
+  font-size: calcRem(12);
+  color: $helper-text-color;
+
+  a {
+    color: $primary-color;
+    @include font-bold;
+  }
+}

@@ -1,0 +1,20 @@
+@import '~sass-core/sass-core';
+
+.responsive-image {
+  display: block;
+  width: 100%;
+  position: relative;
+  opacity: 0;
+  transition: 1s opacity cubic-bezier(0.165, 0.84, 0.44, 1), 2.5s transform cubic-bezier(0.165, 0.84, 0.44, 1);
+  transform: translateX(calcRem(50));
+
+  &.image-loaded {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}

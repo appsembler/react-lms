@@ -1,0 +1,26 @@
+@import '~sass-core/sass-core';
+
+.carousel-container {
+  overflow-x: hidden;
+  padding: calcRem(20);
+}
+
+.cards-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  position: relative;
+  height: calcRem(440);
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    right: calcRem(-20);
+    top: 0;
+    bottom: 0;
+    width: calcRem(60);
+    background: linear-gradient(to right, rgba(#fff, 0) 0%, rgba(#fff, 1) 100%);
+  }
+}

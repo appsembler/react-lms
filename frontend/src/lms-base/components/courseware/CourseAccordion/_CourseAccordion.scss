@@ -1,0 +1,165 @@
+@import '~sass-core/sass-core';
+
+.course-accordion {
+  padding: 0;
+  margin: 0 0 calcRem(30);
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    width: calcRem(2);
+    top: calcRem(10);
+    bottom: calcRem(10);
+    background-color: $light-outlines-color;
+    display: block;
+    left: calcRem(11);
+  }
+
+  li {
+    list-style-type: none;
+  }
+
+  .chapter-container {
+    padding: 0;
+    margin: 0;
+
+    .chapter-name {
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      flex-grow: 1;
+      flex-shrink: 1;
+      @include font-regular;
+      font-size: calcRem(20);
+      padding: calcRem(10) 0;
+      transition: all 0.3s ease-in-out;
+      opacity: 1;
+      color: $helper-text-color;
+
+      .chapter-graded-indicator {
+        display: block;
+        flex-grow: 0;
+        flex-shrink: 0;
+        margin-right: calcRem(20);
+        width: calcRem(24);
+        height: calcRem(24);
+        position: relative;
+        z-index: 2;
+        background: #fff;
+
+        img {
+          width: calcRem(24);
+          height: auto;
+        }
+      }
+    }
+  }
+
+  .chapter-sections-container {
+    padding: 0;
+    margin: 0 0 calcRem(10);
+  }
+
+  .section-container {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+
+    .section-name {
+      display: flex;
+      align-items: center;
+      flex-grow: 1;
+      flex-shrink: 1;
+      @include font-regular;
+      font-size: calcRem(16);
+      padding: calcRem(5) 0;
+      background: none;
+      outline: none;
+      border: none;
+      transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+      opacity: 1;
+
+      .section-graded-indicator {
+        display: flex;
+        align-items: center;
+        flex-grow: 0;
+        flex-shrink: 0;
+        margin-right: calcRem(20);
+        width: calcRem(24);
+        position: relative;
+        z-index: 2;
+        background: #fff;
+
+        img {
+          display: block;
+          margin: 0 auto;
+          width: calcRem(16);
+          height: auto;
+        }
+      }
+
+      &:hover {
+        cursor: pointer;
+        color: $primary-color;
+        text-decoration: underline;
+      }
+    }
+
+    &.section-active {
+
+      .section-name {
+        @include font-bold;
+        transition-delay: 0.4s;
+      }
+    }
+  }
+
+  &.accordion-hidden {
+    &:after {
+      display: none;
+    }
+
+    .chapter-container {
+
+      .chapter-name {
+        padding: 0;
+        height: 0;
+        opacity: 0;
+      }
+    }
+
+    .chapter-sections-container {
+      margin: 0;
+    }
+
+    .section-container {
+
+      .section-name {
+        padding: 0;
+        height: 0;
+        opacity: 0;
+      }
+
+      &.section-active {
+
+        .section-name {
+          @include font-bold;
+          height: auto;
+          font-size: calcRem(48);
+          color: $primary-color;
+          opacity: 1;
+          transition-delay: 0s;
+
+          .section-graded-indicator {
+            margin: 0;
+            opacity: 0;
+            width: 0;
+          }
+        }
+      }
+    }
+  }
+}

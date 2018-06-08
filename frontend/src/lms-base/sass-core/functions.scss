@@ -1,0 +1,37 @@
+/*
+ * Picks a colour from two options based on which one is more visible
+ * on the given background colour.
+ *
+ * Usage: pick-visible-color($bg-color, $color-1, $color-2)
+ */
+
+ @function luma($c) {
+  $-local-red: red(rgba($c, 1.0));
+  $-local-green: green(rgba($c, 1.0));
+  $-local-blue: blue(rgba($c, 1.0));
+
+  @return (0.2126 * $-local-red  +
+           0.7152 * $-local-green +
+           0.0722 * $-local-blue) / 255;
+}
+
+@function pick-visible-color($bg, $c1, $c2) {
+  $bg-luma: luma($bg);
+  $c1-luma: luma($c1);
+  $c2-luma: luma($c2);
+
+  $c1-diff: abs($bg-luma - $c1-luma);
+  $c2-diff: abs($bg-luma - $c2-luma);
+
+  @if $c1-diff > $c2-diff {
+    @return $c1;
+  } @else {
+    @return $c2;
+  }
+}
+
+/* Calculates a rem size value taking into consideration the $rem-base-size variable */
+
+@function calcRem($value-px) {
+  @return ($value-px / $rem-base-size) + 0rem;
+}

@@ -1,0 +1,150 @@
+@import '~sass-core/sass-core';
+
+.index-hero {
+  background-size: contain;
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  padding-top: calcRem(100);
+  padding-bottom: calcRem(160);
+  margin-bottom: calcRem(-60);
+
+  .hero-content {
+    width: 100%;
+    max-width: calcRem(480);
+
+    h1 {
+      font-size: calcRem(52);
+      line-height: calcRem(76);
+      color: $primary-color;
+      margin: 0 0 calcRem(30);
+      padding: 0 0 calcRem(30);
+      border-bottom: calcRem(2) solid $base-text-color;
+      @include font-bold;
+      display: inline-block;
+    }
+
+    p {
+      display: block;
+      font-size: calcRem(16);
+      line-height: calcRem(26);
+      @include font-regular;
+      margin: 0 0 calcRem(30);
+    }
+  }
+}
+
+.index-courses {
+  display: flex;
+  align-items: center;
+
+  .course-search-box {
+    width: 100%;
+    max-width: calcRem(360);
+    flex-shrink: 0;
+    flex-grow: 0;
+    padding-right: calcRem(40);
+
+    h2 {
+      font-size: calcRem(26);
+      line-height: calcRem(42);
+      color: $base-text-color;
+      margin: 0 0 calcRem(30);
+      padding: 0 0 calcRem(30);
+      border-bottom: calcRem(2) solid $base-text-color;
+      @include font-bold;
+      display: inline-block;
+    }
+
+    p {
+      display: block;
+      font-size: calcRem(14);
+      line-height: calcRem(22);
+      @include font-regular;
+      margin: 0 0 calcRem(30);
+    }
+  }
+
+  .courses-cards-container {
+    width: 100%;
+    flex-shrink: 1;
+    flex-grow: 1;
+  }
+}
+
+.index-catalogue-promo {
+  text-align: center;
+  padding-top: calcRem(80);
+  padding-bottom: calcRem(100);
+
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto calcRem(20);
+  }
+
+  h2 {
+    @include font-bold;
+    font-size: calcRem(26);
+    line-height: calcRem(42);
+    margin: 0 0 calcRem(30);
+  }
+
+  p {
+    display: block;
+    margin: calcRem(10) auto calcRem(30);
+    width: 100%;
+    max-width: calcRem(1000);
+    font-size: calcRem(14);
+    line-height: calcRem(22);
+  }
+}
+
+.index-instructors {
+  background-color: $tinted-bg-color;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+  }
+
+  &__image-container {
+    flex-grow: 1;
+    flex-shrink: 1;
+    width: 100%;
+    padding: calcRem(80) calcRem(40) 0;
+
+    img {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+
+  &__content {
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 100%;
+    max-width: calcRem(460);
+    padding-top: calcRem(50);
+    padding-bottom: calcRem(50);
+
+    h2 {
+      font-size: calcRem(26);
+      line-height: calcRem(42);
+      color: $base-text-color;
+      margin: calcRem(20) 0;
+      padding: 0 0 calcRem(30);
+      border-bottom: calcRem(2) solid $base-text-color;
+      @include font-bold;
+      display: inline-block;
+    }
+
+    p {
+      display: block;
+      font-size: calcRem(14);
+      line-height: calcRem(22);
+      @include font-regular;
+      margin: calcRem(20) 0;
+    }
+  }
+}

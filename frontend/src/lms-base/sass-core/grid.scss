@@ -1,0 +1,23 @@
+.container {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 calcRem(30);
+  margin: 0 auto;
+
+  @media(max-width: 799px) {
+    padding: 0 calcRem(30);
+  }
+}
+
+.container-wide {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1400px;
+  padding: 0 calcRem(30);
+  margin: 0 auto;
+
+  @media(max-width: 799px) {
+    padding: 0 calcRem(30);
+  }
+}

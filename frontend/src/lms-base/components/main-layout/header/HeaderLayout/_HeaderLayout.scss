@@ -1,0 +1,66 @@
+@import '~sass-core/sass-core';
+
+.header-wrapper {
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  padding-top: calcRem(30);
+  padding-bottom: calcRem(30);
+}
+
+.logo-container {
+
+}
+
+.logo-image {
+  height: calcRem(50);
+}
+
+.nav-separator {
+  display: block;
+  width: calcRem(1);
+  height: calcRem(28);
+  background-color: $light-outlines-color;
+  margin: 0 calcRem(15);
+}
+
+.language-dropdown-container {
+  display: flex;
+  align-items: center;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.user-container {
+  display: flex;
+  align-items: center;
+  flex-grow: 0;
+  flex-shrink: 0;
+
+  .user-avatar {
+    width: calcRem(42);
+    height: auto;
+    border-radius: 100%;
+    display: block;
+    margin: 0 calcRem(15)
+  }
+}
+
+.course-name {
+  max-width: calcRem(280);
+  font-size: calcRem(14);
+  flex-shrink: 0;
+  flex-grow: 0;
+  margin: 0 calcRem(20);
+
+  .course-code {
+    font-size: calcRem(12);
+    color: $helper-text-color;
+    margin-right: calcRem(5);
+    display: block;
+  }
+}

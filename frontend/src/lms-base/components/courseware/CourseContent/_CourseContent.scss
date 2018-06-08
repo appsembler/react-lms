@@ -1,0 +1,69 @@
+@import '~sass-core/sass-core';
+
+.course-content-container {
+  display: flex;
+  padding-top: calcRem(40);
+  padding-bottom: calcRem(60);
+}
+
+.content-sidebar {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 0;
+  flex-shrink: 0;
+  width: calcRem(120);
+  padding-right: calcRem(40);
+  margin-right: calcRem(40);
+  border-right: calcRem(1) solid $light-outlines-color;
+
+  .sidebar-button {
+    background: none;
+    border: none;
+    outline: none;
+    padding: calcRem(10) 0;
+    width: 100%;
+    margin-bottom: calcRem(30);
+    transition: all 0.3s ease-in-out;
+
+    img {
+      width: calcRem(32);
+      max-height: calcRem(32);
+      display: block;
+      margin: 0 auto calcRem(20);
+    }
+
+    span {
+      @include font-regular;
+      font-size: calcRem(10);
+      color: $helper-text-color;
+    }
+
+    &.active, &:hover {
+      cursor: pointer;
+      opacity: 0.3;
+    }
+  }
+}
+
+.content-main-wrapper {
+  flex: 1 1 100%;
+}
+
+.content-display {
+
+}
+
+:global {
+
+  .unit-title {
+    display: none;
+  }
+
+  .bookmark-button-wrapper {
+    display: none;
+  }
+
+  .xqa-modal, .staff-modal, .history-modal {
+    display: none;
+  }
+}

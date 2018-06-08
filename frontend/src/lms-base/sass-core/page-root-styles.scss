@@ -1,0 +1,15 @@
+@import '~sass-core/variables-main';
+@import '~sass-core/functions';
+@import '~sass-core/typography';
+
+:global html {
+  background-color: $body-bg-color;
+  @include font-regular;
+  font-size: 16px;
+  color: $base-text-color;
+  -webkit-font-smoothing: antialiased;
+}
+
+:global div {
+  box-sizing: border-box;
+}

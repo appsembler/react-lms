@@ -1,0 +1,114 @@
+@import '~sass-core/sass-core';
+
+.input-container {
+  padding: calcRem(10) 0;
+  display: block;
+}
+
+.label {
+  @include font-regular;
+  font-size: calcRem(12);
+  display: block;
+  color: $base-text-color;
+  margin: 0 0 calcRem(10);
+}
+
+.helper-text {
+  display: block;
+  margin: calcRem(10) 0 0;
+  width: 100%;
+  font-size: calcRem(12);
+  color: $helper-text-color;
+
+  a {
+    color: $primary-color;
+    @include font-bold;
+  }
+}
+
+
+
+:global {
+  .react-autosuggest__container {
+    position: relative;
+    padding: 0;
+    width: 100%;
+    color: $base-text-color;
+
+    &--open {
+
+    }
+
+    &:after {
+      content: "\25BE";
+      display: block;
+      font-size: calcRem(16);
+      position: absolute;
+      right: calcRem(4);
+      top: calcRem(5);
+    }
+  }
+
+  .react-autosuggest__input {
+    background: none;
+    padding: calcRem(10) 0;
+    border: none;
+    border-bottom: 1px solid $dark-outlines-color;
+    font-size: calcRem(16);
+    width: 100%;
+    box-sizing: border-box;
+    cursor: pointer;
+
+    &--open {
+
+    }
+
+    &--focused, &:hover {
+      outline: none;
+      border-color: $primary-color;
+      border-width: calcRem(2);
+      padding-bottom: calcRem(9);
+    }
+  }
+
+  .react-autosuggest__suggestions-container {
+
+    &--open {
+      max-height: calcRem(320);
+      overflow-y: auto;
+    }
+  }
+
+  .react-autosuggest__suggestions-list {
+    padding: 0;
+    margin: 0;
+    background: none;
+  }
+
+  .react-autosuggest__suggestion {
+    border-bottom: calcRem(1) solid #ddd;
+    padding: calcRem(14) calcRem(4);
+    list-style-type: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+
+    &--first {
+
+    }
+
+    &--highlighted, &:hover {
+      color: $primary-color;
+    }
+  }
+
+  .react-autosuggest__section-container {
+
+    &--first {
+
+    }
+  }
+
+  .react-autosuggest__section-title {
+
+  }
+}

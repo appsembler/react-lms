@@ -1,0 +1,17 @@
+@import '~sass-core/sass-core';
+
+.dashboard-container {
+
+}
+
+.dashboard-header-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: calcRem(60);
+  padding-bottom: calcRem(50);
+}
+
+.dashboard-courses {
+  background-color: $tinted-bg-color;
+  padding: calcRem(50) 0;
+}

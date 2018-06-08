@@ -1,0 +1,18 @@
+$rem-base-size: 16;
+$base-font-size: calcRem(16);
+
+$mobile-breakpoint: calcRem(420);
+$tablet-breakpoint: calcRem(1020);
+
+$body-bg-color: #fff;
+$tinted-bg-color: #f3f3f3;
+$base-text-color: #050505;
+$helper-text-color: #666;
+$primary-color: #8e44ad;
+$dark-outlines-color: #666;
+$light-outlines-color: #d8d8d8;
+$success-green: #2ecc71;
+$warning-orange: #d35400;
+$critical-red: #e74c3c;
+
+$button-border-radius: calcRem(50);
