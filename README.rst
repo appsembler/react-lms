@@ -145,7 +145,11 @@ Other
 Screenshots
 --------
 ![Index page](https://media.giphy.com/media/3ztVvKIH5jHOxRbBsA/giphy.gif)
+
 ![Card effects](https://media.giphy.com/media/5n5BNMVBjunVBfDBeT/giphy.gif)
+
 ![Course About](https://media.giphy.com/media/FeUGlFLmvBVWu3f58M/giphy.gif)
+
 ![Dashboard](https://media.giphy.com/media/kwSlSy9rtUFKXntpTd/giphy.gif)
+
 ![Course content](https://media.giphy.com/media/1WbJwfz4Scp6nXOwXJ/giphy.gif)
