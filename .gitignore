@@ -1,2 +1,12 @@
 .DS_Store
 /EdX_React_LMS.egg-info
+
+__pycache__/
+*.py[cod]
+*$py.class
+
+*.swp
+
+node_modules
+
+frontend/webpack-stats.json
