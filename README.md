@@ -1,7 +1,7 @@
 Open EdX React LMS app
 ===========
 
-A project that explores creating an `Open edX <https://open.edx.org/>`_ LMS frontend that's separated from the backend and communicates using API's.
+A project that explores creating an [Open edX](https://open.edx.org) LMS frontend that's separated from the backend and communicates using API's.
 
 Notice
 ------
@@ -66,7 +66,7 @@ It is assumed you have an instance of Open edX Gingko running in either a devsta
 
 1. Run the LMS in your devstack (using ``paver``). We like to use the ``--fast`` option with ``paver``, so we don't spend our best years of life waiting for it.
 
-2. Go to ``path_to_your_devstack/src/react-lms/frontend`` in your terminal and run ``yarn start``. Note on this one - make sure you run the ``yarn`` command in the ``/frontend`` folder, not the app root folder.
+2. Go to ``path_to_your_devstack/src/react-lms/frontend`` in your terminal and run ``yarn start`` *(do this in your local machine, not in the devstack VM, and also make sure you have Node and Yarn installed on your machine)*. Note on this one - make sure you run the ``yarn`` command in the ``/frontend`` folder, not the app root folder.
 
 3. Point your browser to ``localhost:8000/edx-figures``
 
@@ -109,7 +109,7 @@ frontend
 When developing the app, we add the code into ``lms-base``.
 
 ### Theming
-What can be seen from the structure above is that the ``theme`` folder reflects the structure of the ``lms-base`` folder. The reason for this is to enable "theming" for the frontend we're building. Essentially, it works in a very similar fashion to `Comprehensive Theming<http://edx.readthedocs.io/projects/edx-installing-configuring-and-running/en/latest/ecommerce/theming.html/>`_ that is already used to theme Open edX sites. If you want to override a component, view, static asset or a sass file that's included somewhere in your React code, you mirror the path to it and the component in the ``theme`` folder and change the new file in a way you prefer.
+What can be seen from the structure above is that the ``theme`` folder reflects the structure of the ``lms-base`` folder. The reason for this is to enable "theming" for the frontend we're building. Essentially, it works in a very similar fashion to [Comprehensive Theming](http://edx.readthedocs.io/projects/edx-installing-configuring-and-running/en/latest/ecommerce/theming.html) that is already used to theme Open edX sites. If you want to override a component, view, static asset or a sass file that's included somewhere in your React code, you mirror the path to it and the component in the ``theme`` folder and change the new file in a way you prefer.
 For example, you want to override the following image included in a .jsx file: ``static/images/defaults/default-hero-bg.jpg``. The full location of that asset is ``frontend/src/lms-base/static/images/defaults/``. So, in order to use your new image asset that you want to use, you can name your new image the same as the original, then place it under ``frontend/src/theme/static/images/defaults/``. The way the webpack config is set up, when resolving imports it will first look for the included asset in the ``theme`` folder, then (if not found) fall back to the default ``lms-base`` folder to load the asset.
 This leads us to the convention for importing assets/components into your components and views..
 
