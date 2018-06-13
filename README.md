@@ -25,6 +25,7 @@ Requirements
 * Python (2.7)
 * Django (1.8)
 * Open edX (Ginkgo)
+* Node and Yarn installed on your machine
 
 Installation
 ------------
